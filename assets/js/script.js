@@ -2,28 +2,28 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  var schedule = $('div.container-fluid')
-  var rows = $('.row')
-  var currentHour = dayjs().hour()
+  var schedule = $('div.container-fluid');
+  var rows = $('.row');
+  var currentHour = dayjs().hour();
   var today = dayjs().format('dddd, MMMM Do');
+  var saveSuccessMessage = $('#save-success');
  
   function saveSchedule(event) {
     var element = $(event.target);  
     // Uses DOM traversal to get the text that the user typed in the
     // time-block containing the button that was clicked.
     if(element.is('button')) {
-      var scheduleText = element.prev('textarea').val();
-      var row = element.parents('div');
+      var eventText = element.prev('textarea').val();
     } else {
-      var scheduleText = element.parent().prev('textarea').val();
-      var row = element.parents('div');
+      var eventText = element.parent().prev('textarea').val();
     }
     // Uses the id in the containing time-block as a key to save the user input
     // in local storage.
+    var row = element.parents('div');
     var rowId = row[0].id;    
-    localStorage.setItem(`${rowId}`, scheduleText);
-    $('#save-success').fadeIn('slow', function(){
-      $('#save-success').delay(3000).fadeOut(); 
+    localStorage.setItem(`${rowId}`, eventText);
+    saveSuccessMessage.fadeIn('slow', function(){
+      saveSuccessMessage.delay(3000).fadeOut(); 
    });
   }  
 
@@ -41,8 +41,8 @@ $(function () {
       } else {
         row.addClass('future');
       }
-      // Gets any user input that was saved in localStorage and 
-      // sets the values of the corresponding textarea elements
+      // Gets saved events from localStorage and 
+      // displays the values in the corresponding textblocks
       savedEvent = localStorage.getItem(`${rowId}`);
       row.children('textarea').text(savedEvent);
     }
