@@ -23,7 +23,7 @@ $(function () {
     var rowId = row[0].id;    
     localStorage.setItem(`${rowId}`, scheduleText);
     $('#save-success').fadeIn('slow', function(){
-      $('#save-success').delay(5000).fadeOut(); 
+      $('#save-success').delay(3000).fadeOut(); 
    });
   }  
 
