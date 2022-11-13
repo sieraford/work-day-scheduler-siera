@@ -4,9 +4,11 @@
 
 I built a simple calendar application that allows a user to save events for each hour of the day so that they can manage their time effectively. This app runs in the browser and features dynamically updated HTML and CSS powered by jQuery. I used the [Day.js](https://day.js.org/en/) library to work with date and time.
 
+Click [here](https://sieraford.github.io/work-day-scheduler-siera/) to view the application.
+
 ## Screenshots
 
-![GIF](/05-third-party-apis-homework-demo.gif)
+![GIF](./assets/images/daily-planner-demo.gif)
 
 ## Installation
 
