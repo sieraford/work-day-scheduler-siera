@@ -45,7 +45,7 @@ $(function () {
       row.addClass('future');
     }
     userInput = localStorage.getItem(`${rowId}`);
-    scheduledEl = row.children('textarea').text(userInput);
+    row.children('textarea').text(userInput);
   }
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
