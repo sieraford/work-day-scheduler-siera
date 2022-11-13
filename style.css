@@ -3,6 +3,19 @@ body {
   font-size: 16px;
 }
 
+header, #save-success {
+  text-align: center;
+}
+
+.red {
+  color:#ff6961;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.container-fluid {
+  border-top: 7px solid black;
+}
+
 textarea {
   background: transparent;
   border: none;

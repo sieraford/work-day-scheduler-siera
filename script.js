@@ -22,6 +22,9 @@ $(function () {
     // in local storage.
     var rowId = row[0].id;    
     localStorage.setItem(`${rowId}`, scheduleText);
+    $('#save-success').fadeIn('slow', function(){
+      $('#save-success').delay(5000).fadeOut(); 
+   });
   }  
 
   function init() {
