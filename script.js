@@ -44,8 +44,8 @@ $(function () {
     } else {
       row.addClass('future');
     }
-    userInput = localStorage.getItem(`${rowId}`);
-    row.children('textarea').text(userInput);
+    savedEvent = localStorage.getItem(`${rowId}`);
+    row.children('textarea').text(savedEvent);
   }
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
